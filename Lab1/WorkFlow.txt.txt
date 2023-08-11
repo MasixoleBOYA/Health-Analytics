@@ -1,0 +1,30 @@
+Introduction:
+In this report, we present the results and interpretation of a linear regression model applied to the "Medical Insurance Charges" dataset. The goal of the analysis was to develop a model using   the linear regression to predict healthcare insurance charges based on various features such as age, gender, BMI, number of children, smoking status, and region of residence. The data set includes information about individual’s healthcare costs, to find out how these costs vary with the given features. The linear regression model serves as a predictive tool to estimate charges and understand the relationships between the predictor variables and the target variable.
+
+Purpose:
+The objective of regression analysis and its significance is to construct a predictive model that can estimate an individual's medical charges based on their attributes. We can acquire insights into the elements that influence healthcare expenses by examining the relationship between input features and medical charges. This data may be useful to a variety of stakeholders, including healthcare providers, insurers, and legislators.
+
+Data Description:
+The dataset utilized for the regression analysis provides information about a group of people's medical bills. Each data entry represents a distinct individual and includes a variety of demographic and healthcare parameters.
+
+Features (Independent Variables):
+Age: The individual's age in years (numeric).
+Sex: The individual's gender (categorical: female or male).
+BMI: Body Mass Index, a numerical measure of body fat based on height and weight.
+Children: The number of insured children or dependents (in numbers).
+Smoker: Whether the individual smokes (categorical: 'yes' or 'no').
+Region: The region in which the individual resides (categorical: southwest, southeast, northwest, northeast) [1].
+
+Dependent Variable (Target Variable):
+Charges: The individual's medical expenses (in numbers). This is the variable that we want to predict through regression analysis [1].
+
+In summary, there are six independent factors (age, gender, BMI, children, smoker, and region) and one dependent variable (charges) in the dataset. The purpose of the regression analysis is to create a model that can forecast medical charges properly based on the features provided. We can obtain useful insights into the factors influencing healthcare costs and make educated decisions in the context of healthcare planning and management by studying the relationship between these variables and medical charges.
+
+
+
+
+Data preparation:
+Handling missing values: The datasets used for the linear regression did not have any missing values however how we would go about handling missing values is by replacing missing values in the same feature with the mean, median, or mode of the non-missing values. This method is straightforward and suitable for features with a minimal number of missing values.
+Encoding Categorical Variables: The code applies one-hot encoding to convert categorical variables (sex, smoker, region) into numerical form. One-hot encoding generates binary columns for each of the original categorical column categories. This is an important step because most machine learning models require numerical inputs and cannot handle categorical variables directly.
+StandardScaler: is used to apply feature scaling to the continuous variables age and bmi. The data is transformed by StandardScaler so that it has a mean of 0 and a standard deviation of 1. This ensures that all features are on the same scale, avoiding bigger magnitude features from dominating the learning process of the model.
+Train-Test-Split: The test size was set to 0.2, indicating that only 20% of the datasets will be used for testing and 80% for training. The random state was set to 42 to ensure split repeatability for the same split to be obtained each time the code is executed. The training set is used to train machine learning models, while the testing set is used to assess their performance on unknown data. This method evaluates how effectively models generalize to new data and avoids overfitting to the training set.
